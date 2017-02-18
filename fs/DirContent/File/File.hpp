@@ -1,24 +1,30 @@
 #ifndef CCLASECOMPILER_FILE
 #define CCLASECOMPILER_FILE
 
-#inlude <string>
-
-using namespase std;
+#include <string>
 
 class File
 {
 	private:
-		string type;
-		string name;
+		std::string type;
+		std::string name;
+		std::string fullName;
 
 	public:
-		bool isNameConsist(string patter);
+		const std::string separator= ".";
+		File();
+		File(std::string name);
+		bool isNameConsist(std::string pattern);
 
-		string getType();
-		string getName();
+		std::string getType();
+		std::string getName();
+		std::string getFullName();
 
-		void setType(string type);
-		void setName(string name);
-}
+		void setType(std::string type);
+		void setName(std::string name);
+		void setFullName(std::string fileFullName);
+		void define(std::string notParsedName);
+		void print();
+};
 
 #endif //CCLASECOMPILER_FILE

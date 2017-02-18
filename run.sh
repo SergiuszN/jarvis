@@ -17,4 +17,4 @@ rm cmake_install.cmake
 echo '***********************'
 echo 'Run Executable!'
 echo '***********************'
-./jarvis.o
+./jarvis

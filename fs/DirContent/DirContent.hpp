@@ -1,32 +1,39 @@
-#ifndef CCLASECOMPILER_DIR_CONTENT
-#define CCLASECOMPILER_DIR_CONTENT
+#ifndef CLASS_DIR_CONTENT
+#define CLASS_DIR_CONTENT
 
+#include <iostream>
 #include <string>
+#include <vector>
 #include "./Dir/Dir.hpp"
 #include "./File/File.hpp"
 
-using namespase std;
+struct tinydir_dir;
+#include "../../vendor/tinydir/tinydir.h"
 
 class DirContent
 {
 	public:
 
-	Dir(string path);
-	~Dir();
+		DirContent(std::string);
+		~DirContent();
 
-	string getPath();
-	int getCountFiles();
-	int getCountDirectories;
-	File getFile(int index);
-	Dir getDir(int index);
+		std::string getPath();
+		int getCountFiles();
+		int getCountDirectories();
+		File getFile(int);
+		Dir getDir(int);
+
+		void setPath(std::string);
 
 	private:
 
-	string path;
-	int countFiles;
-	int countDirectories;
-	File* files;
-	Dir* directories;
-}
+		std::string path;
+		int countFiles;
+		int countDirectories;
+		std::vector<File> files;
+		std::vector<Dir> directories;
 
-#endif //CCLASECOMPILER_DIR_CONTENT
+		void fetchAllInDirectory();
+};
+
+#endif //CLASS_DIR_CONTENT
