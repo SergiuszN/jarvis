@@ -14,6 +14,7 @@ set(SOURCE_FILES
         fs/DirContent/DirContent.cpp
         fs/DirContent/Dir/Dir.cpp
         fs/DirContent/File/File.cpp
+        console/console.cpp
         )
 
 add_executable(jarvis ${SOURCE_FILES})
