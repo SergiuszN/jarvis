@@ -1,6 +1,6 @@
 #include <iostream>
 #include "fs/DirContent/DirContent.hpp"
-#include "console/console.hpp"
+#include "console/Console.hpp"
 
 using namespace std;
 
@@ -17,6 +17,6 @@ int main(int argc, char** argv)
 	Console console("echo It works right");
 	console.runCommand();
 	cout << console.getResult();
-	cout << "-------------------Console Test End-----------------\n";
+	cout << "--------------------Console Test End----------------\n";
 	return 0;
 }

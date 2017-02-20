@@ -1,9 +1,9 @@
-#include "console.hpp"
-
-void someFunc();
+#include "Console.hpp"
 
 Console::Console()
 {
+  this->setCommand(EMPTY_STRING);
+  this->setCommand(EMPTY_STRING);
 }
 
 Console::Console(std::string command)
@@ -19,7 +19,6 @@ Console::~Console()
 std::string Console::runCommand()
 {
   FILE *fp;
-  int status;
   char buffer[BUFFER_MAX_SIZE];
   std::string result = EMPTY_STRING;
   std::string mode;
@@ -39,6 +38,7 @@ std::string Console::runCommand()
   pclose(fp);
 
   this->setResult(result);
+  this->setCommand(EMPTY_STRING);
 
   return result;
 
